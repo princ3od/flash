@@ -510,17 +510,17 @@ class _FlashState<T> extends State<Flash<T>> {
     super.initState();
     animationController.addStatusListener(_handleStatusChanged);
     _moveAnimation = _animation = _createAnimation();
-    if (hasBarrier) {
-      controller.route?.navigator?.focusScopeNode.setFirstFocus(focusScopeNode);
-    }
+    // if (hasBarrier) {
+    //   controller.route?.navigator?.focusScopeNode.setFirstFocus(focusScopeNode);
+    // }
   }
 
   @override
   void didUpdateWidget(Flash<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (hasBarrier) {
-      controller.route?.navigator?.focusScopeNode.setFirstFocus(focusScopeNode);
-    }
+    // if (hasBarrier) {
+    //   controller.route?.navigator?.focusScopeNode.setFirstFocus(focusScopeNode);
+    // }
   }
 
   @override
