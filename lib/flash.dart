@@ -264,7 +264,7 @@ class Flash<T> extends StatefulWidget {
     required this.child,
     this.constraints,
     this.margin = EdgeInsets.zero,
-    this.borderRadius,
+    this.borderRadius = const BorderRadius.circular(0),
     this.borderColor,
     this.borderWidth,
     this.brightness = Brightness.light,
@@ -299,7 +299,7 @@ class Flash<T> extends StatefulWidget {
     required this.child,
     this.constraints,
     this.margin = EdgeInsets.zero,
-    this.borderRadius,
+    this.borderRadius = const BorderRadius.circular(0),
     this.borderColor,
     this.borderWidth,
     this.brightness = Brightness.light,
@@ -330,7 +330,7 @@ class Flash<T> extends StatefulWidget {
     required this.child,
     this.constraints,
     this.margin = EdgeInsets.zero,
-    this.borderRadius,
+    this.borderRadius = const BorderRadius.circular(0),
     this.borderColor,
     this.borderWidth,
     this.brightness = Brightness.light,
@@ -408,7 +408,7 @@ class Flash<T> extends StatefulWidget {
   final EdgeInsets margin;
 
   /// Adds a radius to all corners of Flash. Best combined with [margin].
-  final BorderRadius? borderRadius;
+  final BorderRadius borderRadius;
 
   /// Adds a border to every side of Flash.
   final Color? borderColor;
