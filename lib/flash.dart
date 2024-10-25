@@ -264,7 +264,7 @@ class Flash<T> extends StatefulWidget {
     required this.child,
     this.constraints,
     this.margin = EdgeInsets.zero,
-    this.borderRadius = const BorderRadius.circular(0),
+    this.borderRadius,
     this.borderColor,
     this.borderWidth,
     this.brightness = Brightness.light,
@@ -299,7 +299,7 @@ class Flash<T> extends StatefulWidget {
     required this.child,
     this.constraints,
     this.margin = EdgeInsets.zero,
-    this.borderRadius = const BorderRadius.circular(0),
+    this.borderRadius,
     this.borderColor,
     this.borderWidth,
     this.brightness = Brightness.light,
@@ -330,7 +330,7 @@ class Flash<T> extends StatefulWidget {
     required this.child,
     this.constraints,
     this.margin = EdgeInsets.zero,
-    this.borderRadius = const BorderRadius.circular(0),
+    this.borderRadius,
     this.borderColor,
     this.borderWidth,
     this.brightness = Brightness.light,
@@ -408,7 +408,7 @@ class Flash<T> extends StatefulWidget {
   final EdgeInsets margin;
 
   /// Adds a radius to all corners of Flash. Best combined with [margin].
-  final BorderRadius borderRadius;
+  final BorderRadius? borderRadius;
 
   /// Adds a border to every side of Flash.
   final Color? borderColor;
@@ -544,7 +544,7 @@ class _FlashState<T> extends State<Flash<T>> {
 
     if (widget.borderRadius != null) {
       child = ClipRRect(
-        borderRadius: widget.borderRadius,
+        borderRadius: widget.borderRadius ?? BorderRadius.circular(0),
         child: child,
       );
     }
@@ -561,7 +561,7 @@ class _FlashState<T> extends State<Flash<T>> {
       decoration: BoxDecoration(
         color: widget.backgroundColor,
         gradient: widget.backgroundGradient,
-        borderRadius: widget.borderRadius,
+        borderRadius: widget.borderRadius ?? BorderRadius.circular(0),
         border: widget.borderColor != null
             ? Border.all(
                 color: widget.borderColor!, width: widget.borderWidth ?? 1.0)
@@ -615,7 +615,7 @@ class _FlashState<T> extends State<Flash<T>> {
 
     child = DecoratedBox(
       decoration: BoxDecoration(
-        borderRadius: widget.borderRadius,
+        borderRadius: widget.borderRadius ?? BorderRadius.circular(0),
         boxShadow: widget.boxShadows,
       ),
       child: child,
